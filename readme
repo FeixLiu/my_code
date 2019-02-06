@@ -1,0 +1,19 @@
+已完成：
+glove预训练embedding的载入（文章最大长度64，问题最大长度16）
+squda数据的载入
+一个batch数据的获取
+每个batch的index转化成embedding
+随机遍历一个epoch的数据
+biLSTM搭建完成
+弄明白outputs与states
+确定context与qas的长度不相同
+attention在分类中真的有用
+弄明白similarity matrix怎么通过tensorflow获得
+通过similarity matrix计算cqa以及qca
+搭建biAttention的网络
+使得biLSTM与biAttention不依赖于hyperparameters
+使用biAttention的输出进行下一步操作
+整理bidaf的代码，加各种注释
+
+待完成：
+添加seq2seq attention的代码
