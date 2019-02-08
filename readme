@@ -16,4 +16,5 @@ attention在分类中真的有用
 整理bidaf的代码，加各种注释
 
 待完成：
+解析marco数据集
 添加seq2seq attention的代码

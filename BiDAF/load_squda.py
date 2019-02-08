@@ -12,7 +12,7 @@ def load_squda(vocab2index):
     :return np.array(squda_qas): the matrix of all questions
     :return np.array(squda_label): the matrix of all label
     """
-    filepath = hp.squda_data
+    filepath = hp.squda_train_data
     squda_data = []
     with open(filepath, 'r') as file:
         data = json.load(file)
