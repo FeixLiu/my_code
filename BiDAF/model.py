@@ -35,7 +35,7 @@ with tf.variable_scope('contextLSTM'):
     context_outputs, context_states = bi_lstm.biLSTM(
         inputs=context_embedding,
         input_size=hp.embedding_dim_50d,
-        time_steps=hp.context_max_length,
+        time_steps=hp.context_max_length,  
         hidden_units=hp.lstm_hidden_units,
         batch_size=hp.batch_size,
         project=True

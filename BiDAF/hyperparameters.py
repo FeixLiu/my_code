@@ -9,7 +9,8 @@ class Hyperparams:
     embedding_dim = 300
     batch_size = 8
     context_max_length = 64
-    qas_max_length = 16
+    qas_max_length = 32
+    answer_max_length = 32
     epoch = 10
     lstm_hidden_units = 128
     bidaf_lstm_hidden_units = 1024
