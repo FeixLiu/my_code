@@ -2,6 +2,8 @@ from BiDAF.hyperparameters import Hyperparams as hp
 import numpy as np
 import json
 import sys
+from BiDAF.load_glove import loadGlove
+import nltk
 
 
 def load_squda(vocab2index):
@@ -67,27 +69,15 @@ def convert2list(data, vocab2index):
 
     :return data_list: the list of the index of the input data
     """
-    data = data.split(' ')
+    tokens = nltk.word_tokenize(data)
     data_list = []
-    for word in data:
+    for word in tokens:
         word = word.lower()
-        punctuation = []
-        while (word[-1:] > 'z' or (word[-1:] < 'a' and word[-1:] > '9') or word[-1:] < '0') and word[-1:] <= '~' and word:
-            punctuation.append(word[-1:])
-            word = word[:-1]
         try:
             index = vocab2index[word]
         except KeyError:
             index = 0
         data_list.append(index)
-        punctuation.reverse()
-        if punctuation:
-            for i in punctuation:
-                try:
-                    index = vocab2index[i]
-                except KeyError:
-                    index = 0
-                data_list.append(index)
     if len(data_list) < hp.context_max_length:
         for _ in range(hp.context_max_length - len(data_list)):
             data_list.append(0)
@@ -111,3 +101,7 @@ def load_negative(squda_data):
             neg_pos.append(squda_data[a]['pos'][b])
         paragraph['neg'] = neg_pos
     return squda_data
+
+
+vocab, embd, vocab2index, index2vocab = loadGlove()
+load_squda(vocab2index)

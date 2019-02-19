@@ -5,6 +5,7 @@ class Hyperparams:
     marco_dev_data = '../marco/dev_v2.1.json'
     squda_train_data = '../squda/train-v2.0.json'
     squda_dev_data = '../squda/dev-v2.0.json'
+    conceptNet = '../conceptNet/conceptnet-assertions-5.6.0.csv'
     embedding_dim_50d = 50
     embedding_dim = 300
     batch_size = 8
