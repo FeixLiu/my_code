@@ -12,7 +12,7 @@ def load_conceptNet(vocab2index):
     def _get_lan_and_w(arg):
         arg = arg.strip('/').split('/')
         return arg[1], arg[2]
-    writer = open('../conceptNet/concept.filter', 'w', encoding='utf-8')
+    writer = open(hp.conceptFilter, 'w', encoding='utf-8')
     with open(hp.conceptNet, 'r') as file:
         for line in file:
             index += 1.0

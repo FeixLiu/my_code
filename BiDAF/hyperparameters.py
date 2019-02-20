@@ -6,6 +6,7 @@ class Hyperparams:
     squda_train_data = '../squda/train-v2.0.json'
     squda_dev_data = '../squda/dev-v2.0.json'
     conceptNet = '../conceptNet/conceptnet-assertions-5.6.0.csv'
+    conceptFilter = '../conceptNet/concept.filter'
     embedding_dim_50d = 50
     embedding_dim = 300
     batch_size = 8
